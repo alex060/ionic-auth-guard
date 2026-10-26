@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="tertiary">
+    <ion-title>Panel de Operador</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="handleLogout()">Cerrar Sesión</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card color="light">
+    <ion-card-header>
+      <ion-card-title>Bienvenido, {{ currentSession()?.username }}</ion-card-title>
+      <ion-card-subtitle>Rol: {{ currentSession()?.role }}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>Has superado la validación del enrutador (<code>authGuard</code> y <code>roleGuard('user')</code>).</p>
+      <p>La sesión está almacenada activamente en <code>sessionStorage</code> con la clave <code>DAM2_AUTH_SESSION</code>.</p>
+
+      <div class="test-section ion-margin-top">
+        <ion-text color="medium">
+          <p><strong>Comprobación de Control de Acceso Granular:</strong></p>
+          <p>Al tener el rol <code>user</code>, no tienes permiso para acceder al panel de administración (<code>/admin</code>).</p>
+        </ion-text>
+
+        <ion-button expand="block" color="warning" fill="outline" (click)="testAccessAdmin()" class="ion-margin-top">
+          Intentar acceder a /admin
+        </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,26 @@
+ion-card {
+  max-width: 450px;
+  margin: 2rem auto;
+}
+
+.custom-input-item {
+  --padding-top: 10px;
+  --padding-bottom: 8px;
+  margin-bottom: 1.25rem;
+
+  ion-label {
+    margin-bottom: 8px !important;
+    font-weight: 500;
+  }
+
+  ion-input {
+    margin-top: 6px;
+    --padding-top: 6px;
+    --padding-bottom: 6px;
+  }
+}
+
+.credentials-info {
+  border-top: 1px solid var(--ion-color-light-shade, #e0e0e0);
+  padding-top: 1rem;
+}
